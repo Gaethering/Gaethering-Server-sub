@@ -1,0 +1,6 @@
+rootProject.name = 'geathering-server'
+
+include 'module-common'
+include 'module-user'
+include 'module-chatting'
+include 'module-board'
