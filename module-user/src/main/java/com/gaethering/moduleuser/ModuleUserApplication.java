@@ -9,8 +9,12 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication(
     scanBasePackages = {"com.gaethering.modulecommon", "com.gaethering.moduleuser"}
 )
-@EntityScan("com.gaethering.modulecommon.domain")
-@EnableJpaRepositories(basePackages = "com.gaethering.modulecommon.repository")
+@EntityScan(
+    basePackages = {"com.gaethering.modulecommon.domain", "com.gaethering.moduleuser.domain"}
+)
+@EnableJpaRepositories(
+    basePackages = {"com.gaethering.modulecommon.repository", "com.gaethering.moduleuser.repository"}
+)
 @EnableJpaAuditing
 public class ModuleUserApplication {
 
