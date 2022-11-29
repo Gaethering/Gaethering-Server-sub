@@ -1,5 +1,6 @@
 package com.gaethering.moduleuser.domain;
 
+import com.gaethering.modulecommon.domain.Member;
 import com.gaethering.moduleuser.type.Gender;
 import java.time.LocalDate;
 import javax.persistence.Column;
@@ -9,6 +10,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -45,5 +48,9 @@ public class Pet {
     private String description;
 
     private String imageUrl;
+
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    private Member member;
 
 }
